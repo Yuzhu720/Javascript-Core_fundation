@@ -16,8 +16,12 @@
 DOM 把以上内容都看作是对象
 
 2.获取元素
-（1）通过ID获取——getElementById
+（1）通过ID获取  ——getElementById
 id 是大小写敏感的唯一标识符;
 返回值为一个匹配到ID的DOM Element对象,若没有则会返回null
+
+(2)通过标签名获取 --getElementsByTagName
+可以带有标签名的对象的集合
+
 
 
