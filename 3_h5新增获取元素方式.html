@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3_h5新增获取元素方式</title>
+  </head>
+  <body>
+    <div class="box">Box</div>
+    <div class="box">Box</div>
+    <div id="nav">
+      <ul>
+        <li>首页</li>
+        <li>产品</li>
+      </ul>
+    </div>
+    <script>
+      //  1.getElementsByClassName 根据类名获取某些元素
+      var boxs = document.getElementsByClassName("box");
+      //   2. 返回数据类型也是伪数组
+      console.log(boxs);
+      //  3. querySelector,直接写选择器其需要写符号，只返回第一个对象
+      var firstBox = document.querySelector(".box");
+      var nav = document.querySelector("#nav");
+      var li = document.querySelector("li");
+      //   4. querySelectorAll()指定选择器的所有元素对象集合，返回伪数组
+      var allBox = document.querySelectorAll(".box");
+    </script>
+  </body>
+</html>

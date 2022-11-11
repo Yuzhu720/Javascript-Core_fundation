@@ -23,5 +23,15 @@ id 是大小写敏感的唯一标识符;
 (2)通过标签名获取 --getElementsByTagName
 可以带有标签名的对象的集合
 
+(3)h5新增的方式 
+getElementsByClassName
+querySelector
+querySelectorAll
+返回指定选择器的第一个元素对象
+
+3.获取特殊元素
+body html标签
+
+
 
 
