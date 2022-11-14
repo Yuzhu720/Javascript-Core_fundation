@@ -29,9 +29,16 @@ querySelector
 querySelectorAll
 返回指定选择器的第一个元素对象
 
-3.获取特殊元素
+(4)获取特殊元素
 body html标签
+body
+document.body
+html
+document.documentElement
 
+4.事件基础
+使我们有能力创建动态页面，触发响应机制
+网页中每个元素都可以产生某些可以出发js的事件
 
 
 
