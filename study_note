@@ -39,6 +39,14 @@ document.documentElement
 4.事件基础
 使我们有能力创建动态页面，触发响应机制
 网页中每个元素都可以产生某些可以出发js的事件
+（1）执行时间的步骤
+获取事件源
+注册事件（绑定事件）
+
+5.操作元素
+1.改变元素的内容 
+element.innerText
+element.innerHTML
 
 
 
