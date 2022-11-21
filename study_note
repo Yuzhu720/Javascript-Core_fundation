@@ -48,5 +48,11 @@ document.documentElement
 element.innerText
 element.innerHTML
 
+2.样式属性操作
+element.style 行内样式操作
+element.className 类名样式操作
+
+JS修改style样式操作，产生的是行内样式，css权重比较高
+
 
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>案例1——分时显示不同的图片</title>
+    <style>
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="img/jisoo.jpeg" />
+    <div id="greeting">hello 我是jisoo</div>
+    <script>
+      // 1.获取元素
+      var img = document.querySelector("img");
+      var div = document.querySelector("div");
+      //   2.得到当前的小时数
+      var time = new Date();
+      var hour = time.getHours();
+      //   3.判断小时数改变图片和文字信息
+      if (hour < 12) {
+        img.src = "img/jennie.webp";
+        div.innerHTML = "hello 我是jennie";
+      } else if (hour < 18) {
+        img.src = "img/jisoo.jpeg";
+        div.innerHTML = "hello 我是jisoo";
+      } else {
+        img.src = "img/rose.jpeg";
+        div.innerHTML = "hello 我是rose";
+      }
+    </script>
+  </body>
+</html>

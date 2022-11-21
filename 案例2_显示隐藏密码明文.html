@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>案例2_显示隐藏密码明文</title>
+    <style>
+      .box {
+        width: 400px;
+        border-bottom: 1px solid #ccc;
+        margin: 100px auto;
+        position: relative;
+      }
+
+      .box input {
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+      }
+      .box span {
+        position: absolute;
+        top: 6px;
+        right: 30px;
+        width: 24px;
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <label for="">
+        <span>🧐</span>
+      </label>
+      <input type="password" name="" id="" />
+    </div>
+
+    <script>
+      //  点击按钮，把密码框类型改为文本框就可以看见
+      // 一个按钮两个状态，点击一次，切换为文本框，继续点击一次切换为密码框
+      //   1.获取元素
+      var span = document.querySelector("span");
+      var input = document.querySelector("input");
+      var flag = 0;
+      span.onclick = function () {
+        if (flag === 0) {
+          input.type = "text";
+          span.innerHTML = "👀";
+          flag = 1;
+        } else {
+          input.type = "password";
+          span.innerHTML = "🧐";
+          flag = 0;
+        }
+        //   利用flag变量来标识
+      };
+    </script>
+  </body>
+</html>
