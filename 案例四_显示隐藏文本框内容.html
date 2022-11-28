@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>案例四_隐藏文本框内容</title>
+  </head>
+  <body>
+    <input type="text" value="手机" />
+    <script>
+      var input = document.querySelector("input");
+      //   onfocus 和 onblur
+      input.onfocus = function () {
+        console.log("得到焦点");
+        if (this.value === 手机) {
+          this.value = "";
+        }
+      };
+
+      input.onblur = function () {
+        console.log("失去焦点");
+        if (this.value === "") {
+          this.value = "";
+        }
+      };
+    </script>
+  </body>
+</html>

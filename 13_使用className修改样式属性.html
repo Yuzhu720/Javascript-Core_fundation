@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13_使用className修改样式属性</title>
+    <style>
+      .change {
+        background-color: purple;
+        color: #fff;
+        font-size: 25px;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>文本</div>
+    <script>
+      //   1.使用element.style 修改元素样式 在样式比较少或者功能简单的情况下使用
+      var test = document.querySelector("div");
+      test.onclick = function () {
+        // this.style.backgroundColor = "purple";
+        // this.style.color = "#fff";
+        // this.style.fontSize = "25px";
+        // this.style.marginTop = "100px";
+        // 通过className修改，可以在复杂的情况下使用，会覆盖原先的类名
+        this.className = "change";
+      };
+    </script>
+  </body>
+</html>
