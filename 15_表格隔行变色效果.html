@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15_表格隔行变色</title>
+    <style>
+      #box {
+        border-collapse: collapse;
+      }
+
+      #box tr {
+        border: 1px solid #ddd;
+      }
+      #box tr:nth-child(even) {
+        background-color: rgb(221, 208, 208);
+      }
+      .bg {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="box">
+      <thead>
+        <tr>
+          <th>代码</th>
+          <th>名称</th>
+          <th>最新公布净值</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>003526</td>
+          <td>台湾</td>
+          <td>345677</td>
+        </tr>
+        <tr>
+          <td>003336</td>
+          <td>上海</td>
+          <td>346677</td>
+        </tr>
+        <tr>
+          <td>003337</td>
+          <td>成都</td>
+          <td>346677</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      //   1.获取元素 获取的是tbody里面的所有行
+      var trs = document.querySelector("tbody").querySelectorAll("tr");
+      // 2.为每个tr设置鼠标滑过和滑出时间
+      for (var i = 0; i < trs.length; i++) {
+        trs[i].onmouseover = function () {
+          this.className = "bg";
+        };
+        trs[i].onmouseout = function () {
+          this.className = "";
+        };
+      }
+    </script>
+  </body>
+</html>

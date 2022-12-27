@@ -9,7 +9,21 @@
   </head>
   <body>
     <div id="box">
-      <input class="name" placeholder="邮箱/ID/用户名" />
+      <input class="username" placeholder="邮箱/ID/用户名" type="text" />
     </div>
+    <script>
+      var ipt = document.querySelector(".username");
+      console.log(ipt);
+      ipt.onfocus = function () {
+        if (this.value === "") {
+          this.placeholder = "";
+        }
+      };
+      ipt.onblur = function () {
+        if (this.value === "") {
+          this.placeholder = "邮箱/ID/用户名";
+        }
+      };
+    </script>
   </body>
 </html>

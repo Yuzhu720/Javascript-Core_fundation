@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>案例7——表单全选取消全选案例</title>
+    <style>
+      #j_th {
+        background-color: aquamarine;
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <table>
+        <thead id="j_th">
+          <tr>
+            <th>
+              <input type="checkbox" id="j_cbAll" />
+            </th>
+            <th>商品</th>
+            <th>价钱</th>
+          </tr>
+        </thead>
+        <tbody id="j_tb">
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>iphone8</td>
+            <td>8000</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>iphone9</td>
+            <td>9000</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>iphone10</td>
+            <td>10000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      //   思路分析
+      // 1.全选和取消全选的做法 让下面所有复选框和checked属性跟随全选按钮即可
+      // 需要获取的元素：全选框，和每个单选框
+      var j_cbAll = document.getElementById("j_cbAll");
+      var j_tbs = document.getElementById("j_tb").getElementsByTagName("input");
+      // 给全选框注册事件
+      j_cbAll.onclick = function () {
+        for (var i = 0; i < j_tbs.length; i++) {
+          // 让每一项的选中状态跟随全选框的选中状态
+          j_tbs[i].checked = this.checked;
+        }
+      };
+      // 给每个复选框添加点击事件，当点击之后，去检查其他按钮是否全被选中
+      for (var i = 0; i < j_tbs.length; i++) {
+        j_tbs[i].onclick = function () {
+          //  设置flag来来控制全选按钮是否被选中
+          var flag = true;
+          for (var i = 0; i < j_tbs.length; i++) {
+            if (!j_tbs[i].checked) {
+              flag = false;
+              break;
+            }
+          }
+          j_cbAll.checked = flag;
+        };
+      }
+    </script>
+  </body>
+</html>
